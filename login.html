@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODEN | تسجيل الدخول</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#0b0b0b;color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
+    .card{background:#111;border:1px solid #222;border-radius:14px;padding:28px;width:100%;max-width:420px}
+    h1{text-align:center;margin-bottom:6px;font-size:26px}
+    .subtitle{text-align:center;color:#aaa;margin-bottom:22px;font-size:14px}
+    label{display:block;margin-bottom:6px;font-size:14px;color:#ccc}
+    input{width:100%;padding:12px;margin-bottom:14px;background:#0b0b0b;border:1px solid #222;border-radius:8px;color:#fff;font-size:14px}
+    input:focus{outline:none;border-color:#555}
+    button{width:100%;padding:12px;border:none;border-radius:8px;background:#fff;color:#000;font-weight:bold;cursor:pointer;font-size:15px}
+    button.alt{margin-top:12px;background:#1a1a1a;color:#fff;border:1px solid #222}
+    button[disabled]{opacity:.6;cursor:not-allowed}
+    .divider{text-align:center;margin:18px 0;color:#666;font-size:13px}
+    .links{text-align:center;margin-top:14px;font-size:13px}
+    .links a{color:#aaa;text-decoration:none}
+    .links a:hover{text-decoration:underline}
+    .error{display:none;background:#2a0000;border:1px solid #550000;padding:10px;border-radius:8px;color:#ff9b9b;font-size:13px;margin-bottom:14px}
+  </style>
+</head>
+<body><div class="card">
+  <h1>CODEN</h1>
+  <div class="subtitle">تسجيل دخول المطورين</div>  <div class="error" id="errorBox">البريد الإلكتروني أو كلمة المرور غير صحيحة</div><label>البريد الإلكتروني</label> <input id="email" type="email" placeholder="you@developer.com" />
+
+<label>كلمة المرور</label> <input id="password" type="password" placeholder="••••••••" />
+
+<button id="loginBtn" onclick="login()">تسجيل الدخول</button>
+
+  <div class="divider">— أو —</div>
+  <button class="alt" onclick="githubLogin()">تابع مع GitHub</button>  <div class="links">
+    <p><a href="forgot-password.html">هل نسيت كلمة السر؟</a></p>
+    <p>جديد على CODEN؟ <a href="register.html">أنشئ حسابًا</a></p>
+  </div>
+</div><script>
+function login(){
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const error = document.getElementById('errorBox');
+  const btn = document.getElementById('loginBtn');
+
+  error.style.display = 'none';
+
+  if(!email || !password){
+    error.textContent = 'من فضلك أدخل البريد الإلكتروني وكلمة المرور';
+    error.style.display = 'block';
+    return;
+  }
+
+  // Loading (Mock)
+  btn.disabled = true;
+  btn.textContent = 'جارٍ التحقق…';
+
+  // MOCK LOGIN — سيتم استبداله بـ API
+  setTimeout(()=>{
+    // أي بيانات تدخل المستخدم (عرض فقط)
+    window.location.href = 'home.html';
+  }, 700);
+}
+
+function githubLogin(){
+  alert('GitHub OAuth (Mock)');
+}
+</script></body>
+</html>

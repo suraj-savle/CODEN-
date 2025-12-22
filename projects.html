@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODEN | Projects</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#0b0b0b;color:#fff}header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #222}
+header h1{font-size:22px}
+nav a{margin-left:16px;color:#aaa;text-decoration:none;font-size:14px}
+nav a:hover,nav a.active{color:#fff}
+
+.container{max-width:1100px;margin:20px auto}
+
+.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.top-bar h2{font-size:20px}
+.add-btn{padding:10px 16px;border:none;border-radius:8px;background:#fff;color:#000;font-weight:bold;cursor:pointer}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+
+.card{background:#111;border:1px solid #222;border-radius:14px;padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.card h3{font-size:16px;margin-bottom:6px}
+.card p{font-size:14px;color:#aaa;line-height:1.6}
+
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.tag{font-size:12px;padding:4px 8px;background:#1a1a1a;border:1px solid #222;border-radius:20px;color:#ccc}
+
+.links{display:flex;justify-content:space-between;margin-top:10px}
+.links a{font-size:13px;color:#aaa;text-decoration:none}
+.links a:hover{color:#fff}
+
+@media(max-width:700px){.top-bar{flex-direction:column;gap:10px;align-items:flex-start}}
+
+  </style>
+</head>
+<body><header>
+  <h1>CODEN</h1>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="profile.html">Profile</a>
+    <a class="active" href="projects.html">Projects</a>
+    <a href="login.html">Logout</a>
+  </nav>
+</header><div class="container">  <div class="top-bar">
+    <h2>🚀 Projects</h2>
+    <button class="add-btn" onclick="addProject()">+ New Project</button>
+  </div>  <div class="projects" id="projects"><div class="card">
+  <div>
+    <h3>CODEN Platform</h3>
+    <p>منصة اجتماعية للمبرمجين تركز على المشاريع والمجتمعات التقنية.</p>
+    <div class="tags">
+      <div class="tag">HTML</div>
+      <div class="tag">CSS</div>
+      <div class="tag">JavaScript</div>
+    </div>
+  </div>
+  <div class="links">
+    <a href="project.html">View</a>
+    <a href="#">GitHub</a>
+  </div>
+</div>
+
+<div class="card">
+  <div>
+    <h3>AI Notes App</h3>
+    <p>تطبيق ملاحظات ذكي يعتمد على التلخيص باستخدام الذكاء الاصطناعي.</p>
+    <div class="tags">
+      <div class="tag">Python</div>
+      <div class="tag">AI</div>
+    </div>
+  </div>
+  <div class="links">
+    <a href="project.html">View</a>
+    <a href="#">GitHub</a>
+  </div>
+</div>
+
+  </div>
+</div><script>
+function addProject(){
+  window.location.href = 'add-project.html';
+}
+</script></body>
+</html>

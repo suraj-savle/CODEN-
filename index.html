@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODEN | Home</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#0b0b0b;color:#fff}header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 24px;border-bottom:1px solid #222
+}
+header h1{font-size:22px}
+nav a{margin-left:16px;color:#aaa;text-decoration:none;font-size:14px}
+nav a:hover,nav a.active{color:#fff}
+
+.container{max-width:1100px;margin:20px auto;display:grid;grid-template-columns:2fr 1fr;gap:20px}
+
+.card{background:#111;border:1px solid #222;border-radius:14px;padding:16px}
+
+textarea{
+  width:100%;background:#0b0b0b;border:1px solid #222;
+  border-radius:8px;padding:10px;color:#fff;resize:none
+}
+
+button{
+  margin-top:10px;padding:10px 16px;border:none;border-radius:8px;
+  background:#fff;color:#000;font-weight:bold;cursor:pointer
+}
+
+.post{margin-top:16px;padding-top:16px;border-top:1px solid #222}
+.post h3{font-size:15px}
+.post span{font-size:12px;color:#aaa}
+.post p{margin-top:8px;line-height:1.6}
+
+.actions{margin-top:10px;display:flex;gap:14px;font-size:13px;color:#aaa}
+.actions span{cursor:pointer}
+.actions span:hover{color:#fff}
+
+.side-item{margin-bottom:10px;font-size:14px;color:#ccc}
+
+@media(max-width:900px){.container{grid-template-columns:1fr}}
+
+  </style>
+</head>
+<body><header>
+  <h1>CODEN</h1>
+  <nav>
+    <a class="active" href="home.html">Home</a>
+    <a href="profile.html">Profile</a>
+    <a href="projects.html">Projects</a>
+    <a href="login.html">Logout</a>
+  </nav>
+</header><div class="container">  <!-- FEED -->  <main>
+    <div class="card">
+      <textarea id="postInput" rows="3" placeholder="شارك فكرة، كود، أو سؤال..."></textarea>
+      <button onclick="addPost()">نشر</button>
+    </div><div id="feed">
+  <div class="card post">
+    <h3>Yossef El-Naggar</h3>
+    <span>Full-Stack Developer</span>
+    <p>CODEN مش مجرد منصة اجتماعية، دي بنية تحتية للمبرمجين.</p>
+    <div class="actions">
+      <span>⭐ Star</span>
+      <span>💬 Comment</span>
+    </div>
+  </div>
+</div>
+
+  </main>  <!-- SIDEBAR -->  <aside>
+    <div class="card">
+      <h3 style="margin-bottom:10px">🔥 Trending</h3>
+      <div class="side-item">#JavaScript</div>
+      <div class="side-item">#AI</div>
+      <div class="side-item">#Startups</div>
+      <div class="side-item">#OpenSource</div>
+    </div><div class="card" style="margin-top:20px">
+  <h3 style="margin-bottom:10px">👨‍💻 Suggested Developers</h3>
+  <div class="side-item">Ahmed • Backend</div>
+  <div class="side-item">Sara • UI/UX</div>
+  <div class="side-item">Omar • AI Engineer</div>
+</div>
+
+  </aside></div><script>
+function addPost(){
+  const input = document.getElementById('postInput');
+  const feed = document.getElementById('feed');
+
+  if(!input.value.trim()) return;
+
+  const post = document.createElement('div');
+  post.className = 'card post';
+  post.innerHTML = `
+    <h3>Guest Developer</h3>
+    <span>Software Engineer</span>
+    <p>${input.value}</p>
+    <div class="actions">
+      <span>⭐ Star</span>
+      <span>💬 Comment</span>
+    </div>
+  `;
+
+  feed.prepend(post);
+  input.value = '';
+}
+</script></body>
+</html>

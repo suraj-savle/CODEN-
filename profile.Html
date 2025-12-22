@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODEN | Profile</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+    body{background:#0b0b0b;color:#fff}header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;border-bottom:1px solid #222}
+header h1{font-size:22px}
+nav a{margin-left:16px;color:#aaa;text-decoration:none;font-size:14px}
+nav a:hover,nav a.active{color:#fff}
+
+.container{max-width:1000px;margin:20px auto;display:grid;grid-template-columns:1fr 2fr;gap:20px}
+
+.card{background:#111;border:1px solid #222;border-radius:14px;padding:18px}
+
+.avatar{width:120px;height:120px;border-radius:50%;background:#222;margin-bottom:12px}
+.name{font-size:20px;font-weight:bold}
+.role{font-size:13px;color:#aaa;margin:6px 0}
+.bio{font-size:14px;line-height:1.6;color:#ccc;margin-top:10px}
+
+.stats{display:flex;justify-content:space-between;margin-top:16px;text-align:center}
+.stat h3{font-size:16px}
+.stat span{font-size:12px;color:#aaa}
+
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.skill{background:#1a1a1a;border:1px solid #222;padding:6px 10px;border-radius:20px;font-size:12px;color:#ccc}
+
+.section-title{font-size:16px;margin-bottom:10px}
+
+.post{padding:12px 0;border-top:1px solid #222}
+.post:first-child{border-top:none}
+.post p{margin-top:6px;line-height:1.6}
+
+@media(max-width:900px){.container{grid-template-columns:1fr}}
+
+  </style>
+</head>
+<body><header>
+  <h1>CODEN</h1>
+  <nav>
+    <a href="home.html">Home</a>
+    <a class="active" href="profile.html">Profile</a>
+    <a href="projects.html">Projects</a>
+    <a href="login.html">Logout</a>
+  </nav>
+</header><div class="container">  <!-- PROFILE CARD -->  <div class="card">
+    <div class="avatar"></div>
+    <div class="name">Yossef El-Naggar</div>
+    <div class="role">Full-Stack Developer</div><div class="skills">
+  <div class="skill">JavaScript</div>
+  <div class="skill">HTML</div>
+  <div class="skill">CSS</div>
+  <div class="skill">AI</div>
+</div>
+
+<div class="bio">
+  مطور مهتم ببناء منصات SaaS ومنتجات قابلة للتوسع عالميًا.
+</div>
+
+<div class="stats">
+  <div class="stat"><h3>45</h3><span>Posts</span></div>
+  <div class="stat"><h3>1.2K</h3><span>Followers</span></div>
+  <div class="stat"><h3>180</h3><span>Following</span></div>
+</div>
+
+  </div>  <!-- USER POSTS -->  <div class="card">
+    <div class="section-title">📝 Posts</div><div class="post">
+  <strong>CODEN Platform</strong>
+  <p>بناء منصة اجتماعية للمبرمجين خطوة بخطوة.</p>
+</div>
+
+<div class="post">
+  <strong>Startups & Developers</strong>
+  <p>ليه المجتمعات التقنية أهم من السوشيال التقليدي.</p>
+</div>
+
+  </div></div></body>
+</html>

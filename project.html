@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODEN | Project Details</title>
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#0b0b0b;
+      color:#fff;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 24px;
+      border-bottom:1px solid #222;
+    }
+
+    header h1{
+      font-size:22px;
+    }
+
+    nav a{
+      margin-left:16px;
+      color:#aaa;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    nav a:hover,
+    nav a.active{
+      color:#fff;
+    }
+
+    .container{
+      max-width:900px;
+      margin:20px auto;
+    }
+
+    .card{
+      background:#111;
+      border:1px solid #222;
+      border-radius:14px;
+      padding:20px;
+    }
+
+    .title{
+      font-size:22px;
+      font-weight:bold;
+    }
+
+    .desc{
+      margin-top:10px;
+      color:#ccc;
+      line-height:1.7;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .tag{
+      background:#1a1a1a;
+      border:1px solid #222;
+      padding:6px 10px;
+      border-radius:20px;
+      font-size:12px;
+      color:#ccc;
+    }
+
+    .links{
+      display:flex;
+      gap:16px;
+      margin-top:14px;
+    }
+
+    .links a{
+      color:#aaa;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    .links a:hover{
+      color:#fff;
+    }
+
+    .actions{
+      margin-top:16px;
+      display:flex;
+      gap:16px;
+      font-size:14px;
+      color:#aaa;
+    }
+
+    .actions span{
+      cursor:pointer;
+    }
+
+    .actions span:hover{
+      color:#fff;
+    }
+
+    .divider{
+      border-top:1px solid #222;
+      margin:20px 0;
+    }
+
+    textarea{
+      width:100%;
+      background:#0b0b0b;
+      border:1px solid #222;
+      border-radius:8px;
+      padding:10px;
+      color:#fff;
+      resize:none;
+    }
+
+    button{
+      margin-top:10px;
+      padding:10px 16px;
+      border:none;
+      border-radius:8px;
+      background:#fff;
+      color:#000;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .comment{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px solid #222;
+    }
+
+    .comment h4{
+      font-size:14px;
+    }
+
+    .comment span{
+      font-size:11px;
+      color:#aaa;
+    }
+
+    .comment p{
+      margin-top:6px;
+      font-size:14px;
+      line-height:1.6;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>CODEN</h1>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="profile.html">Profile</a>
+    <a class="active" href="projects.html">Projects</a>
+    <a href="login.html">Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="card">
+
+    <div class="title">CODEN Platform</div>
+
+    <div class="desc">
+      منصة اجتماعية للمبرمجين لعرض المشاريع، مشاركة الأفكار، وبناء مجتمع تقني حقيقي.
+    </div>
+
+    <div class="tags">
+      <div class="tag">HTML</div>
+      <div class="tag">CSS</div>
+      <div class="tag">JavaScript</div>
+    </div>
+
+    <div class="links">
+      <a href="#">🔗 GitHub</a>
+      <a href="#">🌐 Live Demo</a>
+    </div>
+
+    <div class="actions">
+      <span>⭐ Star</span>
+      <span>✏️ Edit</span>
+      <span>🗑 Delete</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <textarea id="commentInput" rows="3" placeholder="اكتب تعليقك عن المشروع..."></textarea>
+    <button onclick="addComment()">إضافة تعليق</button>
+
+    <div id="comments">
+      <div class="comment">
+        <h4>Ahmed</h4>
+        <span>Backend Developer</span>
+        <p>مشروع ممتاز وفكرته قوية جدًا.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function addComment(){
+    const input = document.getElementById('commentInput');
+    const comments = document.getElementById('comments');
+
+    if(!input.value.trim()) return;
+
+    const comment = document.createElement('div');
+    comment.className = 'comment';
+    comment.innerHTML = `
+      <h4>Guest</h4>
+      <span>Developer</span>
+      <p>${input.value}</p>
+    `;
+
+    comments.appendChild(comment);
+    input.value = '';
+  }
+</script>
+
+</body>
+</html>
